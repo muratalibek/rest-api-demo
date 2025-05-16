@@ -1,8 +1,31 @@
-package com.example.api;
+package com.example.api.students;
 
+import jakarta.persistence.*;
+
+import javax.sound.midi.Sequence;
 import java.time.LocalDate;
 
+@Entity
 public class Student {
+
+    @Id
+    @SequenceGenerator(
+          name = "student_sequence",
+          sequenceName = "student_sequence",
+            allocationSize = 1)
+    @GeneratedValue(
+          strategy = GenerationType.SEQUENCE,
+          generator = "student_sequence")
+//    @Id
+//    @SequenceGenerator(
+//            name = "student_sequence",
+//            sequenceName = "student_sequence",
+//            allocationSize = 1
+//    )
+//    @GeneratedValue(
+//            strategy = GenerationType.SEQUENCE,
+//            generator = "student_sequence"
+//    )
     private Long id;
     private String name;
     private int age;
@@ -36,6 +59,4 @@ public class Student {
     public String getGender() {
         return gender;
     }
-
-
 }
