@@ -2,7 +2,6 @@ package com.example.api.students;
 
 import jakarta.persistence.*;
 
-import javax.sound.midi.Sequence;
 import java.time.LocalDate;
 
 @Entity
@@ -32,8 +31,7 @@ public class Student {
     private String gender;
     private LocalDate birthDate;
 
-    public Student() {
-    }
+
 
     public Student(Long id, String name, int age, String gender, LocalDate birthDate) {
         this.id = id;
@@ -42,6 +40,18 @@ public class Student {
         this.gender = gender;
         this.birthDate = birthDate;
     }
+
+    public Student() {
+
+    }
+    public Student(String name, int age, String gender, LocalDate birthDate) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.birthDate = birthDate;
+    }
+
+
     public Long getId() {
         return id;
     }
