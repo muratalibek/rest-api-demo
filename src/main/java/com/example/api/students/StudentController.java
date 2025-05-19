@@ -28,6 +28,11 @@ public class StudentController {
     public void delete(@PathVariable Long id) {
         studentService.delete(id);
     }
+
+    @PutMapping(path = "/item")
+    public void delete(@RequestBody Student student){
+        studentService.update(student);
+    }
 }
 
 
